@@ -1,0 +1,206 @@
+<div class="sheet-wrapper">
+    <div class="sheet-background">
+        <div class="sheet-logo">
+            <!-- Logo image can be set via CSS -->
+            <div class="sheet-logo-image"></div>
+    </div>
+</div>
+        </div>
+        <div class="sheet-container">
+    <!-- Character Header -->
+    <div class="sheet-header">
+        <div class="sheet-row">
+            <input type="text" name="attr_character_name" placeholder="Character Name" class="sheet-name-input"/>
+            <input type="text" name="attr_grim_sort" placeholder="Grim Sort" class="sheet-grimsort-input"/>
+        </div>
+    </div>
+
+    <!-- Core Stats Section -->
+    <div class="sheet-stats-container">
+        <div class="sheet-stat-block">
+            <label>Might</label>
+            <input type="number" name="attr_might" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Might Check}} {{roll=[[1d20 + @{might}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+        <div class="sheet-stat-block">
+            <label>Finesse</label>
+            <input type="number" name="attr_finesse" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Finesse Check}} {{roll=[[1d20 + @{finesse}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+        <div class="sheet-stat-block">
+            <label>Endurance</label>
+            <input type="number" name="attr_endurance" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Endurance Check}} {{roll=[[1d20 + @{endurance}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+        <div class="sheet-stat-block">
+            <label>Insight</label>
+            <input type="number" name="attr_insight" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Insight Check}} {{roll=[[1d20 + @{insight}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+        <div class="sheet-stat-block">
+            <label>Resolve</label>
+            <input type="number" name="attr_resolve" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Resolve Check}} {{roll=[[1d20 + @{resolve}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+        <div class="sheet-stat-block">
+            <label>Presence</label>
+            <input type="number" name="attr_presence" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Presence Check}} {{roll=[[1d20 + @{presence}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+        <div class="sheet-stat-block">
+            <label>Faith</label>
+            <input type="number" name="attr_faith" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Faith Check}} {{roll=[[1d20 + @{faith}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+        <div class="sheet-stat-block">
+            <label>Magick</label>
+            <input type="number" name="attr_magick" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Magick Check}} {{roll=[[1d20 + @{magick}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+        <div class="sheet-stat-block">
+            <label>Luck</label>
+            <input type="number" name="attr_luck" value="0"/>
+            <button type="roll" value="&{template:default} {{name=Luck Check}} {{roll=[[1d20 + @{luck}]]}}" class="sheet-roll-button">Roll</button>
+        </div>
+    </div>
+
+    <!-- Combat Stats -->
+    <div class="sheet-combat-section">
+        <div class="sheet-hp-block">
+            <label>Hit Points</label>
+            <input type="number" name="attr_hp" value="0"/>
+            <span>/</span>
+            <input type="number" name="attr_hp_max" value="0"/>
+        </div>
+        <div class="sheet-defense-block">
+            <label>Defense</label>
+            <input type="number" name="attr_defense" value="0"/>
+        </div>
+        <div class="sheet-omen-block">
+            <label>Omen Dice</label>
+            <input type="number" name="attr_omen_dice" value="0"/>
+        </div>
+    </div>
+
+    <!-- Conditions -->
+    <div class="sheet-conditions-section">
+        <h3>Conditions</h3>
+        <div class="sheet-condition-grid">
+            <div class="sheet-condition">
+                <label>Last Gasp</label>
+                <input type="checkbox" name="attr_condition_lastgasp"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Artery Slash</label>
+                <input type="checkbox" name="attr_condition_arteryslash"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Bleeding Wound</label>
+                <input type="checkbox" name="attr_condition_bleeding"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Morale Broken</label>
+                <input type="checkbox" name="attr_condition_morale"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Frostbite</label>
+                <input type="checkbox" name="attr_condition_frostbite"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Poisoned</label>
+                <input type="checkbox" name="attr_condition_poisoned"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Stunned</label>
+                <input type="checkbox" name="attr_condition_stunned"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Skull Crack</label>
+                <input type="checkbox" name="attr_condition_skullcrack"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Burning</label>
+                <input type="checkbox" name="attr_condition_burning"/>
+            </div>
+            <div class="sheet-condition">
+                <label>Exhausted</label>
+                <input type="checkbox" name="attr_condition_exhausted"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Weapons -->
+    <div class="sheet-weapons-section">
+        <h3>Weapons</h3>
+        <fieldset class="repeating_weapons">
+            <div class="sheet-weapon-row">
+                <input type="text" name="attr_weapon_name" placeholder="Weapon Name"/>
+                <select name="attr_weapon_damage" class="sheet-weapon-damage">
+                    <option value="d2">D2</option>
+                    <option value="d4">D4</option>
+                    <option value="d6">D6</option>
+                    <option value="d8">D8</option>
+                    <option value="d10">D10</option>
+                    <option value="d12">D12</option>
+                </select>
+                <input type="number" name="attr_weapon_bonus" value="0"/>
+                <button type="roll" value="&{template:default} {{name=@{weapon_name}}} {{damage=[[@{weapon_damage} + @{weapon_bonus}]]}}" class="sheet-roll-button">Roll</button>
+            </div>
+        </fieldset>
+    </div>
+
+    <!-- Inventory -->
+    <div class="sheet-inventory-section">
+        <h3>Inventory</h3>
+        <div class="sheet-inventory-header">
+            <div class="sheet-slots">
+                <label>Max Slots:</label>
+                <input type="number" name="attr_slots_max" value="0"/>
+                <label>Used Slots:</label>
+                <input type="number" name="attr_slots_used" value="0"/>
+            </div>
+        </div>
+        <fieldset class="repeating_inventory">
+            <div class="sheet-inventory-row">
+                <input type="text" name="attr_item_name" placeholder="Item Name"/>
+                <input type="number" name="attr_item_weight" value="1"/>
+                <select name="attr_usage_die" class="sheet-usage-die">
+                    <option value="">-</option>
+                    <option value="d20">D20</option>
+                    <option value="d12">D12</option>
+                    <option value="d10">D10</option>
+                    <option value="d8">D8</option>
+                    <option value="d6">D6</option>
+                    <option value="d4">D4</option>
+                </select>
+            </div>
+        </fieldset>
+    </div>
+
+    <!-- Currency -->
+    <div class="sheet-currency-section">
+        <h3>Currency</h3>
+        <div class="sheet-currency-row">
+            <div class="sheet-currency">
+                <label>Golm</label>
+                <input type="number" name="attr_golm" value="0"/>
+            </div>
+            <div class="sheet-currency">
+                <label>Iron</label>
+                <input type="number" name="attr_iron" value="0"/>
+            </div>
+            <div class="sheet-currency">
+                <label>Gold</label>
+                <input type="number" name="attr_gold" value="0"/>
+            </div>
+        </div>
+    </div>
+
+    <!-- Character Details -->
+    <div class="sheet-details-section">
+        <h3>Character Details</h3>
+        <textarea name="attr_background" placeholder="Background & Story"></textarea>
+        <textarea name="attr_traits" placeholder="Traits & Talents"></textarea>
+        <textarea name="attr_notes" placeholder="Notes"></textarea>
+    </div>
+</div>
